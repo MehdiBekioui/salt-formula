@@ -1,13 +1,13 @@
 base:
   '*':
-    - fileSystem
-  'G@roles:jdk7':
+    - fs
+  'G@roles:mdw:jdk7':
     - mdw.install.jdk7
-  'G@roles:jdk8':
+  'G@roles:mdw:jdk8':
     - mdw.install.jdk8
-  'G@roles:tomcat7':
+  'G@roles:mdw:tomcat7':
     - mdw.install.tomcat7
-  'G@roles:tomcat8':
+  'G@roles:mdw:tomcat8':
     - mdw.install.tomcat8
-  'G@roles:tomcat*':
+  'G@roles:mdw:tomcat*':
     - mdw.instance.tomcat

@@ -1,5 +1,6 @@
 base:
-  'G@roles:jdk*':
+  'G@roles:mdw:jdk*':
     - mdw.install.jdk
-  'G@roles:tomcat*':
+  'G@roles:mdw:tomcat*':
     - mdw.install.tomcat
+    - mdw.instance.tomcat
