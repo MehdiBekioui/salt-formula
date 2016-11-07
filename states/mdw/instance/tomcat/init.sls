@@ -3,7 +3,7 @@
 {% set instances = salt['pillar.get']('tomcats:instances', {}).items() %}
 
 include:
-  - fs.instanceDir
+  - fs.create.instance
 
 {% for instance, args in instances %}
   {% set instanceDir = fs.instancePath + '/tomcat/' + instance %}

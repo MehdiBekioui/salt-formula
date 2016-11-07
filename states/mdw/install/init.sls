@@ -3,7 +3,7 @@
 {% set mdws = salt['pillar.get'](listName + ':installs', {}).items() %}
 
 include:
-  - fs.installDir
+  - fs.create.install
 
 {% for mdw, args in mdws %}
   {% set path = fs.installPath + '/' + name + args['version'] %}

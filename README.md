@@ -1,6 +1,6 @@
 # Salt Formula
 
-Salt formula used in my [salt-vagrant-demo](https://github.com/MehdiBekioui/salt-vagrant-demo) project.
+Salt formula is used in my [salt-vagrant-demo](https://github.com/MehdiBekioui/salt-vagrant-demo) project.
 
 ## License
 
