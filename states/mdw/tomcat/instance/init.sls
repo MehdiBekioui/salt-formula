@@ -11,7 +11,7 @@ include:
 {{ instanceDir }}.instance:
   file.recurse:
     - name: {{ instanceDir }}
-    - source: salt://mdw/instance/tomcat/files
+    - source: salt://mdw/tomcat/instance/files
     - include_empty: true
     - file_mode: 755
     - template: jinja

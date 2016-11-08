@@ -1,8 +1,8 @@
 base:
   'G@roles:mdw:jdk*':
-    - mdw.install.jdk
+    - mdw.jdk.install
   'G@roles:mdw:tomcat*':
-    - mdw.install.tomcat
-    - mdw.instance.tomcat
+    - mdw.tomcat.install
+    - mdw.tomcat.instance
   'G@roles:app':
     - app.install
