@@ -1,5 +1,5 @@
 {% set fs = pillar['fs'] %}
-{% set deliveryRootDir = fs.instancePath + '/.delivery' %}
+{% set deliveryRootDir = fs.instanceDir + '/.delivery' %}
 
 include:
   - fs.create.instance

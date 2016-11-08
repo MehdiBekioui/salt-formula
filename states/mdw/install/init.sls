@@ -6,13 +6,13 @@ include:
   - fs.create.install
 
 {% for mdw, args in mdws %}
-  {% set path = fs.installPath + '/' + name + args['version'] %}
+  {% set path = fs.installDir + '/' + name + args['version'] %}
   {% if not salt['file.directory_exists'](path) %}
-    {% set id = fs.installPath + '/' + mdw %}
+    {% set id = fs.installDir + '/' + mdw %}
 
 {{ id }}.archive:
   archive.extracted:
-    - name: {{ fs.installPath }}
+    - name: {{ fs.installDir }}
     - if_missing: {{ path }}
     - source: {{ args['source'].url }}
     {% if 'md5' in args['source'] %}
@@ -26,8 +26,8 @@ include:
 
 {{ id }}.symlink:
   file.symlink:
-    - name: {{ fs.installPath }}/{{ mdw }}
-    - target: {{ fs.installPath }}/{{ dirNamePrefix }}{{ args['version'] }}
+    - name: {{ fs.installDir }}/{{ mdw }}
+    - target: {{ fs.installDir }}/{{ dirNamePrefix }}{{ args['version'] }}
   {% endif %}
 {% endfor %}
 {% endmacro %}

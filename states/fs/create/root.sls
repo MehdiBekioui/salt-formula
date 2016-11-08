@@ -1,2 +1,2 @@
-{{ pillar['fs'].rootPath }}:
+{{ pillar['fs'].rootDir }}:
   file.directory

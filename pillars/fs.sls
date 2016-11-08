@@ -2,7 +2,7 @@
 {% set instanceDir = rootDir + '/srv' %}
 
 fs:
-  rootPath: {{ rootDir }}
-  installPath: {{ rootDir }}/opt
-  instancePath: {{ instanceDir }}
+  rootDir: {{ rootDir }}
+  installDir: {{ rootDir }}/opt
+  instanceDir: {{ instanceDir }}
   tomcatDir: {{ instanceDir }}/tomcat

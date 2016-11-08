@@ -1,5 +1,5 @@
 include:
   - fs.create.root
 
-{{ pillar['fs'].installPath }}:
+{{ pillar['fs'].installDir }}:
   file.directory

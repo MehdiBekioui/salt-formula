@@ -6,7 +6,7 @@ include:
   - fs.create.instance
 
 {% for instance, conf in instances %}
-  {% set instanceDir = fs.instancePath + '/tomcat/' + instance %}
+  {% set instanceDir = fs.instanceDir + '/tomcat/' + instance %}
 
 {{ instanceDir }}.instance:
   file.recurse:
@@ -18,7 +18,7 @@ include:
     - context:
         name: {{ instance }}
         conf: {{ conf }}
-        installDir: {{ fs.installPath }}
+        installDir: {{ fs.installDir }}
         instanceDir: {{ instanceDir }}
 
   {% if 'lib' in conf %}
