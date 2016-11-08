@@ -1,4 +1,4 @@
-export CATALINA_HOME={{ installDir }}/{{ conf.mdw.tomcatAlias }}
-export CATALINA_BASE={{ instanceDir }}
+export CATALINA_HOME={{ catalinaHome }}
+export CATALINA_BASE={{ catalinaBase }}
 
 $CATALINA_HOME/bin/startup.sh

@@ -18,8 +18,14 @@ include:
     - context:
         name: {{ instance }}
         conf: {{ conf }}
-        installDir: {{ fs.installDir }}
-        instanceDir: {{ instanceDir }}
+        catalinaHome: {{ fs.installDir }}/{{ conf.mdw.tomcatAlias }}
+        catalinaBase: {{ instanceDir }}
+        javaHome: {{ fs.installDir }}/{{ conf.mdw.jdkAlias }}
+  {% if 'catalinaOpts' in conf %}
+        catalinaOpts: {{ conf.catalinaOpts|join(' ') }}
+  {% else %}
+        catalinaOpts: ''
+  {% endif %}
 
   {% if 'lib' in conf %}
     {% for libName, libSource in conf.lib.items() %}

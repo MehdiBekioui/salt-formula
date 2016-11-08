@@ -18,3 +18,8 @@ tomcats:
             maxIdle: 30
             maxActive: 100
             maxWait: 1000
+      catalinaOpts:
+        - -server
+        - -Xms512m
+        - -Xmx512m
+        - -XX:MetaspaceSize=256m
