@@ -4,7 +4,17 @@ tomcats:
       mdw:
         jdkAlias: jdk8
         tomcatAlias: tomcat8
+      lib:
+        mysql-connector-java-6.0.5.jar: salt://deliveries/lib/mysql-connector-java-6.0.5.jar
       datasources:
         usr:
-          usr: solidsnail
+          jndi: jdbc/usr-db
+          driver: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/usr
+          usr: usr
           pwd: solidsnail
+          options:
+            minIdle: 6
+            maxIdle: 30
+            maxActive: 100
+            maxWait: 1000

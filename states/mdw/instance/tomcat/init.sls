@@ -5,10 +5,10 @@
 include:
   - fs.create.instance
 
-{% for instance, args in instances %}
+{% for instance, conf in instances %}
   {% set instanceDir = fs.instancePath + '/tomcat/' + instance %}
 
-tomcat-instance-directories:
+{{ instanceDir }}.instance:
   file.recurse:
     - name: {{ instanceDir }}
     - source: salt://mdw/instance/tomcat/files
@@ -17,7 +17,18 @@ tomcat-instance-directories:
     - template: jinja
     - context:
         name: {{ instance }}
-        conf: {{ args }}
+        conf: {{ conf }}
         installDir: {{ fs.installPath }}
         instanceDir: {{ instanceDir }}
+
+  {% if 'lib' in conf %}
+    {% for libName, libSource in conf.lib.items() %}
+
+{{ instanceDir }}/lib/{{ libName }}:
+  file.managed:
+    - source: {{ libSource }}
+
+     {% endfor %}
+  {% endif %}
+
 {% endfor %}

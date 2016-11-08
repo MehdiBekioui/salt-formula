@@ -1,6 +1,8 @@
-{% set rootPath = grains['fs'] %}
+{% set rootDir = grains['fs'] %}
+{% set instanceDir = rootDir + '/srv' %}
 
 fs:
-  rootPath: {{ rootPath }}
-  installPath: {{ rootPath }}/opt
-  instancePath: {{ rootPath }}/srv
+  rootPath: {{ rootDir }}
+  installPath: {{ rootDir }}/opt
+  instancePath: {{ instanceDir }}
+  tomcatDir: {{ instanceDir }}/tomcat

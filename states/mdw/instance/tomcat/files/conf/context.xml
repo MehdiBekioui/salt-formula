@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  {% if 'datasources' in conf -%}
+    {% for name, ds in conf.datasources.items() %}
+  <ResourceLink name="{{ ds.jndi }}" global="{{ ds.jndi }}" auth="Container" type="javax.sql.DataSource" />
+    {% endfor %}
+  {%- endif %}
+</Context>

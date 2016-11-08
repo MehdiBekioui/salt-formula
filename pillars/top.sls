@@ -11,3 +11,6 @@ base:
     - mdw.install.tomcat8
   'G@roles:mdw:tomcat*':
     - mdw.instance.tomcat
+  'G@roles:app':
+    - app.versions
+    - app.delivery
