@@ -1,11 +1,9 @@
 {% set fs = pillar['fs'] %}
-# Get jdk version
-{% set instances = salt['pillar.get']('tomcats:instances', {}).items() %}
 
 include:
   - fs.create.instance
 
-{% for instance, conf in instances %}
+{% for instance, conf in salt['pillar.get']('tomcats:instances', {}).items() %}
   {% set instanceDir = fs.instanceDir + '/tomcat/' + instance %}
 
 {{ instanceDir }}.instance:
