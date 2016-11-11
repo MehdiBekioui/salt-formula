@@ -9,6 +9,8 @@ base:
     - mdw.install.tomcat7
   'G@roles:mdw:tomcat8':
     - mdw.install.tomcat8
+  'G@roles:mdw:httpd':
+    - mdw.install.httpd
   'G@roles:app':
     - app.versions
     - app.delivery
