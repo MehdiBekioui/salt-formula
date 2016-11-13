@@ -16,3 +16,4 @@ base:
     - app.delivery
   'G@roles:app:usr':
     - mdw.instance.tomcat8-usr
+    - mdw.instance.httpd-usr
