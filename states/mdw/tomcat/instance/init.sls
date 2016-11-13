@@ -11,6 +11,7 @@ include:
     - name: {{ instanceDir }}
     - source: salt://mdw/tomcat/instance/files
     - include_empty: true
+    - exclude_pat: E@(.empty)
     - file_mode: 755
     - template: jinja
     - context:
