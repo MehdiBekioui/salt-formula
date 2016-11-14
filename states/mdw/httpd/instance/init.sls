@@ -19,4 +19,15 @@ include:
         installDir: {{ fs.installDir }}/httpd
         instanceDir: {{ instanceDir }}
 
+  {% if 'extra' in conf %}
+    {% for fileName, content in conf.extra.items() %}
+
+{{ instanceDir }}/conf/extra/{{ fileName }}:
+  file.managed:
+    - contents_pillar: httpds:instances:{{ instance }}:extra:{{ fileName }}
+    - makedirs: true
+
+    {% endfor %}
+  {% endif %}
+
 {% endfor %}  
