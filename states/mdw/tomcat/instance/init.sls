@@ -4,7 +4,7 @@ include:
   - fs.create.instance
 
 {% for instance, conf in salt['pillar.get']('tomcats:instances', {}).items() %}
-  {% set instanceDir = fs.instanceDir + '/tomcat/' + instance %}
+  {% set instanceDir = fs.tomcatDir + '/' + instance %}
 
 {{ instanceDir }}.instance:
   file.recurse:

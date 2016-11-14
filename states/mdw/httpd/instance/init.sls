@@ -4,7 +4,7 @@ include:
   - fs.create.instance
 
 {% for instance, conf in salt['pillar.get']('httpds:instances', {}).items() %}
-  {% set instanceDir = fs.instanceDir + '/httpd/' + instance %}
+  {% set instanceDir = fs.httpdDir + '/' + instance %}
 
 {{ instanceDir }}.instance:
   file.recurse:
