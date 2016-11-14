@@ -16,6 +16,7 @@ include:
     - template: jinja
     - context:
         conf: {{ conf }}
+        instance: {{ instance }}
         installDir: {{ fs.installDir }}/httpd
         instanceDir: {{ instanceDir }}
 

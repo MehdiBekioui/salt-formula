@@ -6,3 +6,4 @@ fs:
   installDir: {{ rootDir }}/opt
   instanceDir: {{ instanceDir }}
   tomcatDir: {{ instanceDir }}/tomcat
+  httpdDir: {{ instanceDir }}/httpd
